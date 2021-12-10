@@ -13,9 +13,10 @@ with open(args.file, "r") as f:
 horizontal = 0
 aim = 0
 depth = 0
-while len(commands) > 0:
-    direction = commands[0].split()[0]
-    magnitude = int(commands[0].split()[1])
+
+for i in range(len(commands)):
+    direction = commands[i].split()[0]
+    magnitude = int(commands[i].split()[1])
     if direction == "forward":
         horizontal = horizontal + magnitude
         depth = depth + aim * magnitude
@@ -23,6 +24,5 @@ while len(commands) > 0:
         aim = aim + magnitude
     if direction == "up":
         aim = aim - magnitude
-    commands.pop(0)
 
 print(horizontal, depth, horizontal * depth)

@@ -11,18 +11,14 @@ with open(args.file, "r") as f:
     depths = f.read().splitlines()
 
 # non-destructive method
-n = 0
 depthSums = []
-while n < len(depths) - 2:
-    depthSums.append(int(depths[n]) + int(depths[n + 1]) + int(depths[n + 2]))
-    n = n + 1
+for i in range(len(depths) -2):
+    depthSums.append(int(depths[i]) + int(depths[i + 1]) + int(depths[i + 2]))
 
-n = 0
 increaseCount = 0
-while n < len(depthSums) - 1:
-    if (depthSums[n + 1] > depthSums[n]):
+for i in range(len(depthSums) - 1):
+    if (depthSums[i + 1] > depthSums[i]):
         increaseCount = increaseCount + 1
-    n = n + 1
 print(increaseCount)
 
 # quick and dirty destructive method
