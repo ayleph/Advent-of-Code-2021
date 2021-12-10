@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 
-with open("day01.input") as f:
+import argparse
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument("file")
+args = parser.parse_args()
+
+with open(args.file, "r") as f:
     depths = f.read().splitlines()
 
 increaseCount = 0

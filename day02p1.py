@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 
-with open("day02.input") as f:
+import argparse
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument("file")
+args = parser.parse_args()
+
+with open(args.file, "r") as f:
     commands = f.read().splitlines()
 
 horizontal = 0
